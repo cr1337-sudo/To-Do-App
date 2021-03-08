@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href='{%static "todo/css/styles.css" %}' />
+    <link rel="stylesheet" href="{% static 'todo/css/normalize.css' %} " />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=B612:ital@1&display=swap"
+      rel="stylesheet"/>
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- MENSAJES AL BORRAR/EDITAR UNA TASK -->
+    <!--    {% if messages %}
+  {% for message in messages %}
+    <div class="notification {{message.tags}} ">
+        {{message}}
+    </div>
+  {% endfor %}
+{% endif %} -->
+
+<div class="flex">
+  <div class="container">
+    <form method="post" class="container-form">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" value="Submit" />
+    </form>
+<table cellspacing=0>
+    {% for task in tasks %}
+    
+      {% if task.state == "READY" %}
+    
+			<tr class="container-items bg-green">
+				<td>{{task.task}}</td>
+				<td>{{task.date}}</td>
+				<td> <a href="{% url 'delete_task' task.id%} " ><i class="fas fa-trash-alt"></i></a>  <a href="{% url 'edit_task' task.id%} "><i class="fas fa-edit"></i></a></td>
+			</tr>
+
+        {% else %}{% if task.state == "UNINITIATED" %}
+   
+			<tr class="container-items bg-red">
+				<td>{{task.task}}</td>
+				<td>{{task.date}}</td>
+				<td> <a href="{% url 'delete_task' task.id%} " ><i class="fas fa-trash-alt"></i></a>  <a href="{% url 'edit_task' task.id%} "><i class="fas fa-edit"></i></a></td>
+			</tr>
+
+
+          {% else %}{% if task.state == "IN PROCESS" %}
+   
+				<tr class="container-items bg-yellow">
+					<td>{{task.task}}</td>
+					<td>{{task.date}}</td>
+					<td> <a href="{% url 'delete_task' task.id%} " ><i class="fas fa-trash-alt"></i></a>  <a href="{% url 'edit_task' task.id%} "><i class="fas fa-edit"></i></a></td>
+				</tr>
+
+
+
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+	</table>
+  </div>
+</body>
+</html>
+
+</div>
+ 

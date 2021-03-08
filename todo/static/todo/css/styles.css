@@ -1,0 +1,92 @@
+html {
+  background: #cdb4db;
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #cdb4db), color-stop(40%, #ffc8dd), color-stop(64%, #ffafcc), color-stop(90%, #bde0fe), to(#a2d2ff));
+  background: linear-gradient(90deg, #cdb4db 20%, #ffc8dd 40%, #ffafcc 64%, #bde0fe 90%, #a2d2ff 100%);
+  color: black;
+  font-family: "B612", sans-serif;
+  font-size: 15px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 7px;
+}
+
+tr {
+  border-radius: 35%;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+.bg-red {
+  background-color: #cd5c5c;
+}
+
+.bg-green {
+  background: #90ee90;
+}
+
+.bg-yellow {
+  background: #ffff66;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 70vh;
+  min-width: 50vw;
+  background: #cdb4db;
+  border-radius: 20px;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-items {
+  border-radius: 50px;
+}
+
+.container-items td {
+  padding: 20px;
+  text-align: left;
+}
+
+i {
+  color: white;
+}
+/*# sourceMappingURL=styles.css.map */
